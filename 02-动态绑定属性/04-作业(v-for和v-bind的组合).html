@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.yanse{
+				color:blue;
+			}
+		</style>
+		<script src="../js/vue.js"></script>
+	<body>
+		
+		<ul id="app">
+			<li v-for="(m,index) in aa" :class="getClass(index)" @click="clickaa(index)">{{index}}-{{m}}</li>
+		</ul>
+	</body>
+	<script>
+		var app=new Vue({
+			el:'#app',
+			data:{
+				aa:['aa','bb','cc','dd'],
+				bb:[{yanse:true},{yanse:false},{yanse:false},{yanse:false}]
+			},
+			methods:{
+				getClass:function (index){
+					return this.bb[index];
+					
+				},
+				clickaa:function(index){
+					for(let i in this.bb){
+						this.bb[i].yanse=false
+					}
+					this.bb[index].yanse=!this.bb[index].yanse
+				}
+			}
+		})
+	</script>
+</html>

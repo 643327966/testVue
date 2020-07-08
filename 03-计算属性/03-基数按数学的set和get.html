@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+			<h2>{{fullName}}</h2>
+			
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			const app =new Vue({
+				el:'#app',
+				data:{
+					aa:'aa1',
+					bb:'bb2'
+				},
+				computed:{
+					fullName:{
+						set:function(newValue){
+							//console.log("---",newValue)
+							const names = newValue.split(' ');
+							this.aa=names[0]
+							this.bb=names[1]
+						},
+						get:function(){
+							return this.aa+" "+this.bb
+						}
+					}
+					/* fullName:function(){
+						return this.aa+" "+this.bb
+					} */
+				}
+			})
+		</script>
+	</body>
+</html>

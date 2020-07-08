@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+			<h2>{{aa}} {{bb}}</h2>
+			<h2>{{getFullName()}}</h2>
+			<h2>{{fullName}}</h2>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			var a='9'+9;
+			var b=3+3;
+			console.log(a+b);
+			const app =new Vue({
+				el:'#app',
+				data:{
+					aa:'aa1',
+					bb:'bb1'
+				},
+				computed:{
+					fullName: function(){
+						return this.aa+" "+this.bb
+					}
+				},
+				methods:{
+					getFullName(){
+						return this.aa+" "+this.bb
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

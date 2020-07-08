@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+			<h2>{{aa}}</h2>
+			<img :src="imgURL"  />
+			<h2> <a :href="baidu">bd</a></h2>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			const app =new Vue({
+				el:'#app',
+				data:{
+					aa:'aa1',
+					imgURL:'https://img.ithome.com/newsuploadfiles/2020/6/20200607_200429_404.jpg',
+					baidu:'http://www.baidu.com'
+				}
+			})
+		</script>
+	</body>
+</html>
